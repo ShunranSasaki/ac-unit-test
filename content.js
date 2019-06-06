@@ -194,7 +194,7 @@ class TestClass(unittest.TestCase):
   for(var i = 0; i < io.length; i++){
     text += 
 `    def test_${io[i].name.replace('入力例', 'input')}(self):
-        logging.info("test_${io[i].name.replace('入力例', 'input')}")
+        print("test_${io[i].name.replace('入力例', 'input')}")
         input = """${io[i].input.trim("\n").replace(/\n/g, '\r\n')}"""
         output = """${io[i].output.trim("\n").replace(/\n/g, '\r\n')}"""
         self.assertIO(input, output)
