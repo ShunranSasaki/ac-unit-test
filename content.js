@@ -175,10 +175,17 @@ function createPyUnittest(io) {
 from io import StringIO
 import unittest
 import logging
+
 logging.basicConfig(level=logging.DEBUG)
+
 
 def resolve():
     pass
+
+
+    if __name__ == '__main__':
+    resolve()
+
 
 class TestClass(unittest.TestCase):
     def assertIO(self, input, output):
@@ -189,6 +196,7 @@ class TestClass(unittest.TestCase):
         out = sys.stdout.read()[:-1]
         sys.stdout, sys.stdin = stdout, stdin
         self.assertEqual(out, output)
+
 `;
   
   for(var i = 0; i < io.length; i++){
@@ -198,6 +206,7 @@ class TestClass(unittest.TestCase):
         input = """${io[i].input.trim("\n").replace(/\n/g, '\r\n')}"""
         output = """${io[i].output.trim("\n").replace(/\n/g, '\r\n')}"""
         self.assertIO(input, output)
+
 `;
   }
 
