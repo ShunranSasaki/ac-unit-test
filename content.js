@@ -213,7 +213,8 @@ class TestClass(unittest.TestCase):
 
   text += `
 if __name__ == "__main__":
-    unittest.main()`;
+    unittest.main()
+`;
   
   return text;
 }
